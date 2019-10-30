@@ -1,0 +1,54 @@
+Attribute VB_Name = "BAS_ETL"
+Option Compare Database
+Option Explicit
+Sub main()
+    Dim app As Excel.Application
+    Dim wb As Excel.Workbook
+    Dim ws As Excel.Worksheet
+    
+    Dim LNG_SOURCE_ROW As Double
+    Dim LNG_TARGET_ROW As Double
+    Dim INT_ARRAY_POSI As Integer
+    Dim ARY_PROGRAM() As String
+    LNG_TARGET_ROW = 1
+    Set app = New Excel.Application
+    
+    Set wb = app.Workbooks.Add
+    app.Visible = True
+    app.WindowState = xlMaximized
+    
+    With wb
+        LNG_SOURCE_ROW = LNG_SOURCE_ROW + 1
+        Set ws = wb.Sheets(1)
+        Dim RST_DATA As Recordset
+        Set RST_DATA = CurrentDb.OpenRecordset("SPLUNK_EXPORT_2019_YTD")
+        ws.Cells(LNG_SOURCE_ROW, 1) = "USER"
+        ws.Cells(LNG_SOURCE_ROW, 2) = "ROLE"
+        ws.Cells(LNG_SOURCE_ROW, 3) = "PROGRAM"
+        ws.Cells(LNG_SOURCE_ROW, 4) = "DATE"
+        With RST_DATA
+            While Not .EOF
+            If InStr(.Fields("PROGRAMS").Value, Chr(10)) > 0 Then
+                LNG_SOURCE_ROW = LNG_SOURCE_ROW + 1
+                LNG_TARGET_ROW = LNG_TARGET_ROW + 1
+                ARY_PROGRAM = Split(.Fields("PROGRAMS").Value, Chr(10))
+                For INT_ARRAY_POSI = 0 To UBound(ARY_PROGRAM)
+                    ws.Cells(LNG_TARGET_ROW, 1) = .Fields("USER").Value
+                    ws.Cells(LNG_TARGET_ROW, 2) = .Fields("ROLE").Value
+                    ws.Cells(LNG_TARGET_ROW, 3) = ARY_PROGRAM(INT_ARRAY_POSI)
+                    ws.Cells(LNG_TARGET_ROW, 4) = .Fields("DATE").Value
+                    LNG_TARGET_ROW = LNG_TARGET_ROW + 1
+                Next
+            Else
+                    ws.Cells(LNG_TARGET_ROW, 1) = .Fields("USER").Value
+                    ws.Cells(LNG_TARGET_ROW, 2) = .Fields("ROLE").Value
+                    ws.Cells(LNG_TARGET_ROW, 3) = .Fields("PROGRAMS").Value
+                    ws.Cells(LNG_TARGET_ROW, 4) = .Fields("DATE").Value
+                    LNG_TARGET_ROW = LNG_TARGET_ROW + 1
+            End If
+            .MoveNext
+            Wend
+        End With
+        
+    End With
+End Sub
