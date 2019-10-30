@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="126" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\DRAFT_REPORT_YTD_DIRECT_FROM_SPLUNK.xlsx|||`REMOVED_SORT_FROM_SPLUNK$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DRAFT_REPORT_YTD_DIRECT_FROM_SPLUNK.xlsx
+Table=`REMOVED_SORT_FROM_SPLUNK$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CDSID" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\DRAFT_REPORT_YTD_DIRECT_FROM_SPLUNK.xlsx|||`REMOVED_SORT_FROM_SPLUNK$`" type="V_String" />
+            <Field name="ROLE" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\DRAFT_REPORT_YTD_DIRECT_FROM_SPLUNK.xlsx|||`REMOVED_SORT_FROM_SPLUNK$`" type="V_String" />
+            <Field name="PROGRAM" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\DRAFT_REPORT_YTD_DIRECT_FROM_SPLUNK.xlsx|||`REMOVED_SORT_FROM_SPLUNK$`" type="V_String" />
+            <Field name="DATE" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\DRAFT_REPORT_YTD_DIRECT_FROM_SPLUNK.xlsx|||`REMOVED_SORT_FROM_SPLUNK$`" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="138" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\SPLUNK_EXPORT_2019_YTD_FROM_WEEKLY_EXPORTS.xlsx|||`SPLUNK_EXPORT_2019_YTD_FROM_WK$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>SPLUNK_EXPORT_2019_YTD_FROM_WEEKLY_EXPORTS.xlsx
+Table=`SPLUNK_EXPORT_2019_YTD_FROM_WK$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="User" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\SPLUNK_EXPORT_2019_YTD_FROM_WEEKLY_EXPORTS.xlsx|||`SPLUNK_EXPORT_2019_YTD_FROM_WK$`" type="V_String" />
+            <Field name="Role" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\SPLUNK_EXPORT_2019_YTD_FROM_WEEKLY_EXPORTS.xlsx|||`SPLUNK_EXPORT_2019_YTD_FROM_WK$`" type="V_String" />
+            <Field name="Programs" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\SPLUNK_EXPORT_2019_YTD_FROM_WEEKLY_EXPORTS.xlsx|||`SPLUNK_EXPORT_2019_YTD_FROM_WK$`" type="V_String" />
+            <Field name="Date" size="255" source="File: C:\PROJECTS\DATA\FEDEBOM\LEADERSHIP_DECK\GENERIC_LOG_PROCESSING\VERSION04\SPLUNK_EXPORT_2019_YTD_FROM_WEEKLY_EXPORTS.xlsx|||`SPLUNK_EXPORT_2019_YTD_FROM_WK$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="282" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="DATE" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DATE - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="282" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Date" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Date - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="426" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>Date</InputFieldName>
+          <Format>dd-Mon-yyyy</Format>
+          <OutputFieldName>DateTime_Out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert Date From:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="558" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="DateTime_Out" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DateTime_Out - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="762" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="DATE" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="DateTime_Out" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="678" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Date] != "Date"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>Date</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-10-01 11:27:54</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Date</Operand>
+              <StartDate>2019-10-01 11:27:54</StartDate>
+              <EndDate>2019-10-01 11:27:54</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Date] != "Date"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>COMPARING_DIRECT_PULL_TO_WEEKLY_PIECES</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
